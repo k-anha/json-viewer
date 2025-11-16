@@ -66,13 +66,10 @@
         >
           Format JSON
         </button>
-        <button
-          id="importJson"
-          type="button"
-          class="text-white rounded-md hover:bg-gray-300 px-5 py-2.5 mb-2 hover:text-gray-900 duration-150 ease-in-out"
-        >
+        <label for="file-upload" class="file-upload-label text-white rounded-md hover:bg-gray-300 px-5 py-2.5 mb-2 hover:text-gray-900 duration-150 ease-in-out">
           Import JSON
-        </button>
+        </label>
+          <input id="file-upload" type="file" accept=".json" class="opacity-0 w-0.5 h-0.5 absolute overflow-hidden -z-10"/>
         <button
           id="exportJson"
           type="button"
