@@ -1,6 +1,7 @@
 import updateLineColumn from "./utils/updateLineCol.js";
 import formatJson from "./utils/formatjson.js";
 import saveJson from "./utils/savejson.js";
+import importJson from "./utils/importjson.js";
 export const input = document.getElementById("json-input");
 export const output = document.getElementById("json-output");
 
@@ -9,11 +10,15 @@ input.addEventListener("mouseup",()=>{updateLineColumn(input)})
 
 const formatButton = document.getElementById("formatJson");
 const exportJson = document.getElementById("exportJson");
+const fileInput=document.getElementById("file-upload");
+
+fileInput.addEventListener("change",(event)=>{importJson(event)})
 
 formatButton.addEventListener("click", formatJson);
 document.addEventListener("keydown", (key) => {
   if (key.altKey && key.shiftKey && key.code == "KeyF") {
     formatJson();
+    key.preventDefault();
   }
 });
 
